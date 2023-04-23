@@ -8,7 +8,7 @@ provider "aws" {
 terraform {
   backend "s3" {
     bucket = "mybucket4250"
-    key    = "terraform.tfstate"
+    key    = "/terraform/terraform.tfstate"
     region = "us-east-1"
   }
 }
