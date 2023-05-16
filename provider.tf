@@ -1,15 +1,15 @@
 provider "aws" {
   version    = "~> 4.0"
-  region     = "us-east-1"
+  region     = "us-east-2"
   access_key = "${var.access_key}"
   secret_key = "${var.secret_key}"
 
 }
 terraform {
   backend "s3" {
-    bucket = "mybucket4250"
+    bucket = "terrabuck90"
     key    = "terraform.tfstate"
-    region = "us-east-1"
+    region = "us-east-2"
   }
 }
 resource "aws_vpc" "example" {
