@@ -16,5 +16,7 @@ sh 'terraform plan -lock=false'
 stage('apply'){
 sh 'terraform apply --auto-approve -lock=false'
 }
-
+stage('apply'){
+sh 'terraform destroy --auto-approve -lock=false'
+}
 }
