@@ -18,4 +18,8 @@ sh 'terraform workspace select prod'
 sh 'terraform plan --var-file prod.tfvars -lock=false'
 sh 'terraform apply --var-file prod.tfvars --auto-approve -lock=false'
 }
+stage('destroy'){
+sh 'terraform destroy --var-file dev.tfvars --auto-approve -lock=false'
+sh 'terraform destroy --var-file prod.tfvars --auto-approve -lock=false'
+}
 }
