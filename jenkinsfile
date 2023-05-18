@@ -12,10 +12,10 @@ sh 'terraform workspace new prod'
 sh 'terraform workspace select dev'
 }
 stage('plan'){
-sh 'terraform plan -lock=false'
+sh 'terraform plan --var-file dev.tfvars -lock=false'
 }
 stage('apply'){
-sh 'terraform apply --auto-approve -lock=false'
+sh 'terraform apply --var-file dev.tfvars --auto-approve -lock=false'
 }
 
 }
