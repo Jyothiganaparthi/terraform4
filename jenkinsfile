@@ -6,4 +6,7 @@ git branch: 'main', credentialsId: 'github', url: 'https://github.com/Jyothigana
 stage('init'){
 sh 'terraform init -reconfigure'
 }
+stage('plan'){
+sh 'terraform plan'
+}
 }
