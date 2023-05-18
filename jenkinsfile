@@ -1,0 +1,9 @@
+node{
+tool name: 'Terraform', type: 'terraform'
+stage('gitcheckout'){
+git branch: 'main', credentialsId: 'github', url: 'https://github.com/Jyothiganaparthi/terraform4.git'
+}
+stage('init'){
+sh 'terraform init -reconfigure'
+}
+}
