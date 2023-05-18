@@ -6,18 +6,16 @@ git branch: 'main', credentialsId: 'github', url: 'https://github.com/Jyothigana
 stage('init'){
 sh 'terraform init -reconfigure'
 }
-stage('workspace'){
+stage('workspace dev'){
 sh 'terraform workspace list'
-
 sh 'terraform workspace select dev'
-}
-stage('plan'){
 sh 'terraform plan --var-file dev.tfvars -lock=false'
-}
-stage('apply'){
 sh 'terraform apply --var-file dev.tfvars --auto-approve -lock=false'
 }
-stage('apply'){
-sh 'terraform destroy --var-file dev.tfvars --auto-approve -lock=false'
+stage('workspace prod'){
+sh 'terraform workspace list'
+sh 'terraform workspace select prod'
+sh 'terraform plan --var-file prod.tfvars -lock=false'
+sh 'terraform apply --var-file prod.tfvars --auto-approve -lock=false'
 }
 }
