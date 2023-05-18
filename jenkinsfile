@@ -13,6 +13,6 @@ stage('apply'){
 sh 'terraform apply --auto-approve -lock=false'
 }
 stage('destroy'){
-sh 'terraform destroy --auto-approve'
+sh 'terraform destroy --auto-approve -lock=false'
 }
 }
