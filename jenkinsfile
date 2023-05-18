@@ -8,7 +8,7 @@ sh 'terraform init -reconfigure'
 }
 stage('workspace'){
 sh 'terraform workspace list'
-sh 'terraform workspace new dev'
+
 }
 stage('plan'){
 sh 'terraform plan -lock=false'
