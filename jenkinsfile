@@ -8,7 +8,8 @@ sh 'terraform init -reconfigure'
 }
 stage('workspace'){
 sh 'terraform workspace list'
-
+sh 'terraform workspace new prod'
+sh 'terraform workspace select dev'
 }
 stage('plan'){
 sh 'terraform plan -lock=false'
@@ -16,7 +17,5 @@ sh 'terraform plan -lock=false'
 stage('apply'){
 sh 'terraform apply --auto-approve -lock=false'
 }
-stage('apply'){
-sh 'terraform destroy --auto-approve -lock=false'
-}
+
 }
