@@ -13,7 +13,7 @@ stage('apply'){
 sh 'terraform apply --auto-approve'
 }
 stage('destroy'){
-sh 'terraform destroy'
+sh 'terraform destroy --auto-approve'
 }
 
 }
