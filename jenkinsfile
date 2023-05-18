@@ -12,4 +12,8 @@ sh 'terraform plan'
 stage('apply'){
 sh 'terraform apply --auto-approve'
 }
+stage('destroy'){
+sh 'terraform destroy'
+}
+
 }
