@@ -7,13 +7,9 @@ stage('init'){
 sh 'terraform init -reconfigure'
 }
 stage('plan'){
-sh 'terraform plan'
+sh 'terraform plan -lock=false'
 }
 stage('apply'){
 sh 'terraform apply --auto-approve'
 }
-stage('destroy'){
-sh 'terraform destroy --auto-approve'
-}
-
 }
