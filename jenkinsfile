@@ -12,4 +12,7 @@ sh 'terraform plan -lock=false'
 stage('apply'){
 sh 'terraform apply --auto-approve -lock=false'
 }
+sage('destroy'){
+sh 'terraform destroy'
+}
 }
