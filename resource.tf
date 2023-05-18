@@ -1,6 +1,6 @@
 resource "aws_vpc" "example" {
-  cidr_block           = "10.0.0.0/16"
-  enable_dns_hostnames = true
+  cidr_block           = var.cidr
+  enable_dns_hostnames = var.enable
   tags = {
     Name = "Myvpc"
   }
